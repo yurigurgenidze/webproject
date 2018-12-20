@@ -1,0 +1,101 @@
+#container{
+    width: 80vh;
+    height: 80vh;
+    background-color: black;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+#header{
+    text-align: center;
+    color: grey;
+    font-family: 'Unlock', cursive;
+    display: inline-block;
+    margin-left: 32%;
+    font-size: 200%;
+}
+
+.snake-element1{
+    width: 4vh;
+    height: 4vh;
+    background-color: green;
+    display: inline-block;
+    position: absolute;
+    border-radius: 30%;
+}
+
+.snake-element2{
+    width: 4vh;
+    height: 4vh;
+    background-color: darkgreen;
+    display: inline-block;
+    position: absolute;
+    border-radius: 40%;
+
+}
+
+.apple{
+    background-color: red;
+    border-radius: 50%;
+}
+
+#speed{
+    display: inline-block;
+    font-size: 300%;
+    font-family: 'Unlock', cursive;
+    float: left;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+
+
+#gameInfo{
+    margin-top: 100px;
+    margin-right: 60px;
+    border: 2px solid blue;
+    padding: 10px;
+    font-size: 20px;
+    float: right;
+    display: inline-block;
+    font-family: 'Unlock', cursive;
+    border-radius: 10px;
+    width: 200px;
+}
+
+#tryTo{
+
+    font-size: 300%;
+    font-family: 'Unlock', cursive;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 110px;
+}
+#main{
+    background-color: antiquewhite;
+}
+
+#firstText{
+    color: blue;
+}
+#secondText{
+    color: red;
+}
+#thirdText{
+    color: green;
+}
+#fourthText{
+    color: purple;
+}
+#fifthText{
+    color: grey;
+}
+#sixthText{
+    color: orangered;
+}
+#seventhText{
+    color: lightblue;
+}
+#eightText{
+    color: chartreuse;
+}
