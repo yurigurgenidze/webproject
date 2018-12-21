@@ -1,4 +1,22 @@
 console.log(100)
+//Mimartulebebi
+const direct = {
+    NORTH : {
+        x: 0, y : -1
+    },
+    SOUTH : {
+        x : 0, y : 1
+    },
+    WEST : {
+        x : -1, y : 0
+    },
+    EAST : {
+        x : 1, y : 0
+    }
+
+}
+
+
 class Element{
 
     constructor(uniqueId, xCoord, yCoord){
