@@ -123,3 +123,71 @@ class Grid{
 
 
 }
+
+class MainSnake {
+    //Vqmnit gvels da grids da vamatebt gridshi                                                                                                             
+    constructor(gridMatrix){
+        this.snakeArray = [];
+        this.snakeArray.push(new Element(0,1,2));
+        this.snakeArray.push(new Element(1,2,2));
+        this.snakeArray.push(new Element(3,3,2));
+        this.snakeArray.push(new Element(4,4,2));
+        this.snakeArray.push(new Element(2,5,2));
+        this.grid = gridMatrix;
+        //Default Direction
+        this.direction = direct.SOUTH;
+        this.snakeArray.forEach((element) => {this.grid.addNewElement(element)});
+    }
+
+
+    //Shemdegi svla vashlia/kedelia tu gvelia
+    moving(){
+
+        let firstPeace = this.snakeArray[this.snakeArray.length-1];
+        let xCoord = firstPeace.X + this.direction.x;
+        let yCoord = firstPeace.Y + this.direction.y;
+        if (xCoord == 20 || xCoord == -1){
+            return "hit";
+        }
+        if (this.grid.checkTheGrid(xCoord, yCoord) === "null") {
+
+            let shiftElem = this.snakeArray[0];
+            this.snakeArray.shift();
+            this.snakeArray.push(shiftElem);
+            this.grid.pointReplace(shiftElem,xCoord,yCoord);
+            return "null";
+        }
+        if (typeof this.grid.grid[xCoord][yCoord] !== 'undefined' && this.grid.grid[xCoord][yCoord].newElement.id == '-5') {
+
+            let newElement = new Element(this.snakeArray.length, xCoord, yCoord);
+            this.snakeArray.push(newElement);
+            this.grid.addNewElement(newElement);
+            return "apple";
+        }
+
+        if (this.grid.checkTheGrid(xCoord, yCoord) === "hit"){
+            console.log(100);
+            return "hit";
+        }
+        if (this.grid.checkTheGrid(xCoord,yCoord) === "snake"){
+            console.log(213);
+            return "snake";
+        }
+
+    }
+
+
+    //shecvla mimartulebis
+    directionChange(direction){
+        let x = direction.x + this.direction.x;
+        let y = direction.y + this.direction.y;
+
+        if (x != 0 && y != 0){
+
+            this.direction = direction;
+
+        }
+    }
+
+}
+
