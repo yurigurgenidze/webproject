@@ -191,3 +191,58 @@ class MainSnake {
 
 }
 
+class Apples{
+
+    //vqmni vashls
+    constructor(gridMatrix){
+
+        let xCoord = this.rand();
+
+        let yCoord = this.rand();
+
+        this.grid = gridMatrix;
+
+        if(this.grid.grid[xCoord][yCoord] == null){
+            this.newApple = new Element(-5, xCoord, yCoord);
+        }
+        else{
+            while(this.grid.grid[xCoord][yCoord] != null){
+                xCoord = this.rand();
+                yCoord = this.rand();
+            }
+
+            this.newApple = new Element(-5, xCoord, yCoord);
+
+        }
+
+        this.grid.addNewElement(this.newApple);
+
+        this.newApple.newElement.classList.add('apple');
+        this.newApple.newElement.classList.add('snake-element');
+    }
+    //random ricxvis dagenerireba 0-20
+    rand(){
+        let coord = Math.random()*19;
+        coord = Math.round(coord);
+        return coord;
+    }
+
+    //axal adgilas vashlis dadgma
+    appear(){
+        let xCoord = this.rand();
+        let yCoord = this.rand();
+
+        if(this.grid.grid[xCoord][yCoord] == null){
+            this.grid.pointReplace(this.newApple,xCoord, yCoord);
+        }
+        else{
+            while(this.grid.grid[xCoord][yCoord] != null){
+                xCoord = this.rand();
+                yCoord = this.rand();
+            }
+            this.grid.pointReplace(this.newApple,xCoord, yCoord);
+
+        }
+    }
+}
+
