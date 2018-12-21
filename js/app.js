@@ -246,3 +246,79 @@ class Apples{
     }
 }
 
+//Mtavari Event
+window.addEventListener("keydown", function(event){
+    if(event.key == 'ArrowUp' || event.key == 'w') {
+        snake.directionChange(direct.NORTH);
+    }
+    if(event.key == 'ArrowDown' || event.key == 's') {
+        snake.directionChange(direct.SOUTH);
+    }
+    if(event.key == 'ArrowLeft' || event.key == 'a') {
+        snake.directionChange(direct.WEST);
+    }
+    if(event.key == 'ArrowRight' || event.key == 'd') {
+        snake.directionChange(direct.EAST);
+    }
+});
+
+
+//Mtavari funqcia romelic droshi 
+function mainFunction(snake, apple) {
+
+    let move = snake.moving();
+
+    if(move == "snake"){
+        window.alert("Game Over!\nRestart the page to continue!");
+
+        return;
+    }
+
+
+    if(move == "apple"){
+        apple.appear();
+        let number = snake.snakeArray.length-4;
+        if(number > 4){
+            document.getElementById("speed").style.color = "green";
+        }
+        if(number >= 8){
+            document.getElementById("speed").style.color = "blue";
+        }
+        if(number >= 12){
+            document.getElementById("speed").style.color = "orange";
+        }
+        if(number >= 15){
+            document.getElementById("speed").style.color = "red";
+        }
+
+        let message = "Level = " + number;
+        console.log(message);
+        document.getElementById("speed").innerHTML = message;
+
+    }
+
+
+    if(move == "hit"){
+        window.alert("Game Over!\nRestart the page to continue!")
+        return;
+    }
+
+
+    window.setTimeout(function () {
+        console.log(snake.snakeArray.length-1);
+        mainFunction(snake,apple);
+    },250 - (10) * snake.snakeArray.length-1);
+
+
+}
+
+
+let grid = new Grid();
+
+let snake = new MainSnake(grid);
+
+let apple = new Apples(grid);
+
+
+mainFunction(snake,apple);
+
