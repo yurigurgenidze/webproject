@@ -1,6 +1,5 @@
 #container{
-    width: 80vh;
-    height: 80vh;
+
     background-color: black;
     margin: 0 auto;
     border: 1px solid red;
@@ -16,18 +15,14 @@
 }
 
 .snake-element1{
-    width: 4vh;
-    height: 4vh;
-    background-color: green;
+
     display: inline-block;
     position: absolute;
     border-radius: 30%;
 }
 
 .snake-element2{
-    width: 4vh;
-    height: 4vh;
-    background-color: darkgreen;
+
     display: inline-block;
     position: absolute;
     border-radius: 40%;
@@ -35,7 +30,7 @@
 }
 
 .apple{
-    background-color: red;
+    
     border-radius: 50%;
 }
 
@@ -94,7 +89,7 @@
     color: orangered;
 }
 #seventhText{
-    color: lightblue;
+    color: darkgreen;
 }
 #eightText{
     color: chartreuse;
